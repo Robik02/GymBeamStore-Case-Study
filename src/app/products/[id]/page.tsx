@@ -55,7 +55,7 @@ const ProductDetailPage = () => {
                     animate={{ opacity: 1 }}
                     transition={{ repeat: Infinity, duration: 1.2, ease: 'easeInOut' }}
                 >
-                    Načítavam detail produktu...
+                    Loading product details...
                 </motion.div>
             </div>
         );
@@ -64,7 +64,7 @@ const ProductDetailPage = () => {
     if (!product) {
         return (
             <div className="text-center mt-10 text-red-600 text-lg font-semibold">
-                Produkt nebol nájdený.
+                Product not found!
             </div>
         );
     }
@@ -80,7 +80,7 @@ const ProductDetailPage = () => {
                 onClick={() => router.back()}
                 className="mb-6 text-orange-600 font-medium hover:underline transition-colors"
             >
-                ← Späť na zoznam
+                ← Back to our products
             </button>
 
             <div className="bg-white rounded-xl shadow-lg p-8 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -100,7 +100,7 @@ const ProductDetailPage = () => {
                         <h1 className="text-4xl font-bold mb-4 text-gray-900">{product.title}</h1>
                         <p className="text-gray-700 text-base leading-relaxed mb-6">{product.description}</p>
                         <p className="text-sm text-gray-500 mb-4">
-                            Kategória:{' '}
+                            Category:{' '}
                             <span className="capitalize font-medium text-orange-600">{product.category}</span>
                         </p>
                     </div>
@@ -110,10 +110,10 @@ const ProductDetailPage = () => {
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            onClick={() => alert('Pridané do košíka!')}
+                            onClick={() => alert('Added to cart!')}
                             className="w-full md:w-auto bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded shadow-lg transition duration-300"
                         >
-                            Pridať do košíka
+                            Add to cart
                         </motion.button>
                     </div>
                 </div>

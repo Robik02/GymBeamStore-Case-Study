@@ -36,7 +36,7 @@ const RegisterPage = () => {
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-            setValidationError('Prosím, zadaj platnú emailovú adresu.');
+            setValidationError('Please enter a valid email address.');
             setLoading(false);
             return;
         }
@@ -50,14 +50,14 @@ const RegisterPage = () => {
                 createdAt: serverTimestamp(),
             });
 
-            setSuccess('Registrácia bola úspešná!');
+            setSuccess('Registration was successful!');
         } catch (error: unknown) {
             if (error instanceof Error) {
-                console.error('Registrácia zlyhala:', error.message);
+                console.error('Registration failed:', error.message);
                 setError(error.message);
             } else {
-                console.error('Neznáma chyba pri registrácii:', error);
-                setError('Vyskytla sa neznáma chyba.');
+                console.error('Unknown error during registration:', error);
+                setError('An unknown error occurred.');
             }
         } finally {
             setLoading(false);
@@ -70,7 +70,7 @@ const RegisterPage = () => {
                 onSubmit={handleRegister}
                 className="bg-white p-8 rounded shadow-md w-full max-w-md"
             >
-                <h2 className="text-3xl font-bold mb-6 text-center text-orange-600">Registrácia</h2>
+                <h2 className="text-3xl font-bold mb-6 text-center text-orange-600">Registration</h2>
 
                 {error && <p className="text-red-500 mb-4 text-center">{error}</p>}
 
@@ -99,7 +99,7 @@ const RegisterPage = () => {
 
                 <input
                     type="password"
-                    placeholder="Heslo"
+                    placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     className="w-full border border-gray-300 p-3 mb-6 rounded focus:outline-none focus:ring-2 focus:ring-orange-500"
@@ -114,13 +114,13 @@ const RegisterPage = () => {
                         loading ? 'opacity-60 cursor-not-allowed' : 'hover:bg-orange-600'
                     }`}
                 >
-                    {loading ? 'Registrujem...' : 'Registrovať sa'}
+                    {loading ? 'Registering...' : 'Sign up'}
                 </button>
 
                 <p className="mt-6 text-center text-gray-600">
-                    Už máte účet?{' '}
+                    Already have an account?{' '}
                     <Link href="/login" className="text-orange-500 hover:underline">
-                        Prihláste sa
+                        Sign in
                     </Link>
                 </p>
             </form>

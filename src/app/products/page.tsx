@@ -40,13 +40,13 @@ const ProductsPage = () => {
     }, [router]);
 
     if (loading) {
-        return <div className="text-center mt-10 text-gray-700">Načítavam produkty...</div>;
+        return <div className="text-center mt-10 text-gray-700">Loading products...</div>;
     }
 
     return (
         <div className="min-h-screen p-4 sm:p-6 md:p-10 max-w-7xl mx-auto overflow-x-hidden">
         <h1 className="text-4xl font-extrabold mb-10 text-center text-orange-600 drop-shadow-lg">
-                Naše Produkty
+            Our Products
             </h1>
 
             <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -83,7 +83,7 @@ const ProductsPage = () => {
                                     router.push(`/products/${product.id}`);
                                 }}
                                 className="mt-auto bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 rounded transition-colors duration-300"
-                                aria-label={`Zobraziť detail produktu ${product.title}`}
+                                aria-label={`View product details ${product.title}`}
                             >
                                 Detail
                             </button>

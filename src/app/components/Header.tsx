@@ -54,13 +54,13 @@ const Header = () => {
                                 href="/login"
                                 className="text-orange-500 hover:text-orange-600 font-semibold"
                             >
-                                Prihlásenie
+                                Login
                             </Link>
                             <Link
                                 href="/register"
                                 className="text-orange-500 hover:text-orange-600 font-semibold"
                             >
-                                Registrácia
+                                Registration
                             </Link>
                         </>
                     )}
@@ -99,14 +99,14 @@ const Header = () => {
                                 className="text-orange-500 hover:text-orange-600 font-semibold"
                                 onClick={() => setMenuOpen(false)}
                             >
-                                Prihlásenie
+                                Login
                             </Link>
                             <Link
                                 href="/register"
                                 className="text-orange-500 hover:text-orange-600 font-semibold"
                                 onClick={() => setMenuOpen(false)}
                             >
-                                Registrácia
+                                Registration
                             </Link>
                         </>
                     )}

@@ -32,11 +32,11 @@ const LoginPage = () => {
             }, 1500);
         } catch (err: unknown) {
         if (err instanceof Error) {
-            console.error('Prihlásenie zlyhalo:', err.message);
-            setError('Nesprávny email alebo heslo.');
+            console.error('Login failed:', err.message);
+            setError('Incorrect email or password.');
         } else {
-            console.error('Neznáma chyba pri prihlasovaní:', err);
-            setError('Vyskytla sa neznáma chyba.');
+            console.error('Unknown error during login:', err);
+            setError('An unknown error occurred.');
         }
         setLoading(false);
     }
@@ -46,7 +46,7 @@ const LoginPage = () => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
             <form onSubmit={handleLogin} className="bg-white p-8 rounded shadow-md w-full max-w-md relative">
-                <h2 className="text-3xl font-bold mb-6 text-center text-orange-600">Prihlásenie</h2>
+                <h2 className="text-3xl font-bold mb-6 text-center text-orange-600">Login</h2>
 
                 {error && <p className="text-red-500 mb-4 text-center">{error}</p>}
 
@@ -62,7 +62,7 @@ const LoginPage = () => {
 
                 <input
                     type="password"
-                    placeholder="Heslo"
+                    placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     className="w-full border border-gray-300 p-3 mb-6 rounded focus:outline-none focus:ring-2 focus:ring-orange-500"
@@ -100,20 +100,20 @@ const LoginPage = () => {
                             ></path>
                         </svg>
                     )}
-                    {loading ? 'Prihlasujem...' : 'Prihlásiť sa'}
+                    {loading ? 'Logging in...' : 'Sign in'}
                 </button>
 
 
                 {showSuccess && (
                     <div className="fixed bottom-4 right-4 bg-green-500 text-white px-5 py-3 rounded-lg shadow-lg z-50 animate-fadeInOut max-w-xs font-medium"  role="alert">
-                        Úspešne prihlásený!
+                        Successfully logged in!
                     </div>
                 )}
 
                 <p className="mt-6 text-center text-gray-600 text-sm">
-                    Nemáš účet?{' '}
+                    Don’t have an account?{' '}
                     <Link href="/register" className="text-orange-500 hover:underline">
-                        Zaregistruj sa
+                        Sign up.
                     </Link>
                 </p>
             </form>
