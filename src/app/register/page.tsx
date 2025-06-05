@@ -22,7 +22,7 @@ const RegisterPage = () => {
         if (success) {
             timeout = setTimeout(() => {
                 router.push('/products');
-            }, 2000);
+            }, 1500);
         }
         return () => clearTimeout(timeout);
     }, [success, router]);

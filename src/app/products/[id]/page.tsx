@@ -26,7 +26,7 @@ const ProductDetailPage = () => {
             if (!user) {
                 router.push('/login');
             } else {
-                setLoading(false);
+                fetchProduct();
             }
         });
 
@@ -42,12 +42,9 @@ const ProductDetailPage = () => {
             }
         };
 
-        if (id) {
-            fetchProduct();
-        }
-
         return () => unsubscribe();
     }, [id, router]);
+
 
     if (loading) {
         return (

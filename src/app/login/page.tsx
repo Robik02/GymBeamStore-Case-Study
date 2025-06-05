@@ -29,7 +29,7 @@ const LoginPage = () => {
                 setShowSuccess(false);
                 setLoading(false);
                 router.push('/products');
-            }, 2000);
+            }, 1500);
         } catch (err: unknown) {
         if (err instanceof Error) {
             console.error('Prihlásenie zlyhalo:', err.message);
